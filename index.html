@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart To-Do List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h3>Menu</h3>
+    <ul>
+      <li onclick="filterTasks('all')">All Tasks</li>
+      <li onclick="filterTasks('completed')">Completed</li>
+      <li onclick="filterTasks('pending')">Pending</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1>📝 Smart To-Do List</h1>
+    <button onclick="toggleForm()">+ Add Task</button>
+    <div class="task-form" id="taskForm">
+      <input type="text" id="taskInput" placeholder="Task title...">
+      <textarea id="taskNote" placeholder="Optional notes..."></textarea>
+      <input type="datetime-local" id="taskTime">
+      <select id="taskPriority">
+        <option value="low">🟢 Low</option>
+        <option value="medium">🟠 Medium</option>
+        <option value="high">🔴 High</option>
+      </select>
+      <button onclick="addTask()">Save Task</button>
+    </div>
+
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div id="taskList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
